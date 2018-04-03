@@ -21,19 +21,20 @@ public class Gui {
     public void setGui(){
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         button.setText("Add");
         button.addActionListener(new AddMouse());
         checkBox.addItemListener(new CheckBox());
         upperPanel.setLayout(new BoxLayout(upperPanel, BoxLayout.X_AXIS));
         upperPanel.add(textField);
         upperPanel.add(checkBox);
-        panel.add(BorderLayout.NORTH, upperPanel);
-        panel.add(BorderLayout.CENTER, textArea);
-        panel.add(BorderLayout.SOUTH, button);
+        frame.getContentPane().add(BorderLayout.NORTH, upperPanel);
+        frame.getContentPane().add(BorderLayout.CENTER, textArea);
+        frame.getContentPane().add(BorderLayout.SOUTH, button);
+
         checkBox.setBackground(Color.gray);
-        panel.setBackground(Color.gray);
-        frame.setContentPane(panel);
-        frame.setSize(300, 300);
+
+        frame.setSize(500, 500);
         frame.setVisible(true);
 
 
